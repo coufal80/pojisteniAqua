@@ -1,0 +1,17 @@
+<h1>Seznam služeb</h1>
+<table>
+    <?php foreach ($sluzby as $sluzba): ?>
+        <tr>
+            <td>
+                <h2><a href="sluzba/<?= $sluzba['url'] ?>"><?= $sluzba['titulek'] ?></a></h2>
+                <?= $sluzba['popisek'] ?>
+                <?php if ($admin): ?>
+                    <br />
+                    <a href="editor/<?= $sluzba['url'] ?>">Editovat</a>
+                    <a href="sluzba/<?= $sluzba['url'] ?>/odstranit">Odstranit</a>
+                <?php endif ?>
+
+            </td>
+        </tr>
+    <?php endforeach ?>
+</table>

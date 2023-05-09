@@ -1,0 +1,73 @@
+<!-- Založeno 1.5.2023 -->
+
+<!DOCTYPE html>
+<html lang="cs-cz">
+	<head>
+		<base href="/localhost" />
+		<meta charset="UTF-8" />
+		<title><?= $titulek ?></title>
+		<meta name="description" content="<?= $popisek ?>" />
+		<meta name="keywords" content="<?= $klicova_slova ?>" />
+		<link rel="stylesheet" href="style.css" type="text/css"/>
+	</head>
+
+<h1>Editor uživatele</h1>
+<!-- 2.5.2023 upravil jsem $uzivatel na $nactenyUzivatel a smazani placeholder-->
+<form method="post">
+    <input type="hidden" name="uzivatele_id" value="<?= $Uzivatel['uzivatele_id'] ?>">Pokus 2.5.2023
+    <br />
+    Jméno:<br />
+    <input type="text" name="jmeno" value="<?= $Uzivatel['jmeno'] ?>"/><br />
+    Příjmení:<br />
+    <input type="text" name="prijmeni"  value="<?= $Uzivatel['prijmeni'] ?>"/><br />
+    Rodné číslo:<br />
+    <input type="text" name="rodne_cislo"  value="<?= $Uzivatel['rodne_cislo'] ?>"/><br />
+    Telefon:<br />
+    <input type="text" name="telefon"  value="<?= $Uzivatel['telefon'] ?>"/><br />
+    Email:<br />
+    <input type="text" name="email"  value="<?= $Uzivatel['email'] ?>"/><br />
+    Adresa:<br />
+    <input type="text" name="adresa" value="<?= $Uzivatel['adresa'] ?>"/><br />
+    Město:<br />
+    <input type="text" name="mesto" value="<?= $Uzivatel['mesto'] ?>"/><br />
+    Služba:<br />
+    <input type="text" name="kod_sluzby"  value="<?= $Uzivatel['kod_sluzby'] ?>"/><br />
+    <input type="text" name="jmeno_sluzby"  value="<?= $Uzivatel['jmeno_sluzby'] ?>"/><br />
+    <textarea id="sluzba" name="sluzba"><?= $Uzivatel['sluzba'] ?></textarea>
+    <input type="submit" value="Uložit změny" />
+</form>
+
+uzivatele_id','jmeno','prijmeni','rodne_cislo','telefon',  'email','adresa',
+            'mesto','kod_sluzby','jmeno_sluzby','heslo','sluzba
+
+<!-- Celé texty
+	uzivatele_id 	jmeno 	prijmeni 	rodne_cislo 	telefon 	email 	adresa 	mesto 	kod_sluby 	jmeno_sluby 	heslo  -->
+
+<script src="/tinymce/tinymce.min.js"></script>
+<script src="/tinymce/jquery.tinymce.min.js"></script>
+
+<script type="text/javascript">
+    // Nastavení použité pro TinyMCE 5.7.1
+    tinymce.init({
+
+        selector: '#obsah', // Altenativní zápis: `selector: 'textarea[name=obsah]'` nebo pouze `selector: 'textarea'`
+        language: 'cs',
+        toolbar_mode: 'sliding',
+
+        // Doporučené, vypíná převod české diakritiky na entity, šetří místo v tabulce, chceme text formátovat do html tagů
+        entities: '160,nbsp',
+        entity_encoding: 'named',
+
+        // Doporučené
+        plugins: [
+            "advlist autolink lists link image charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table contextmenu paste"
+        ],
+
+        // Doporučené
+        toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+    });
+</script>
+
+</html>

@@ -1,0 +1,17 @@
+<h1>Seznam služeb</h1>
+<table>
+    <?php foreach ($detailUzivatele as $uzivatel): ?>
+        <tr>
+            <td>
+                <h2><a href="uzivatel/<?= $uzivatel['url'] ?>"><?= $uzivatel['titulek'] ?></a></h2>
+                <?= $uzivatel['popisek'] ?>
+                <?php if ($admin): ?>
+                    <br />
+                    <a href="editor/<?= $uzivatel['url'] ?>">Editovat</a>
+                    <a href="uzivatel/<?= $uzivatel['url'] ?>/odstranit">Odstranit</a>
+                <?php endif ?>
+
+            </td>
+        </tr>
+    <?php endforeach ?>
+</table>

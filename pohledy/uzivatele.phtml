@@ -1,0 +1,44 @@
+<?php
+// Založeno 29.4.2023
+?>
+<h1>Seznam uživatelů</h1>
+
+<table>
+    <?php foreach ($uzivatele as $uzivatel): ?>
+        <tr>
+            <td>
+                
+                <h2><a href="uzivatel/    
+                <?= $uzivatel['telefon'] ?>">
+                <?= $uzivatel['cele_jmeno'] ?></a></h2>
+                <?= $uzivatel['rodne_cislo'] ?>
+                 
+                <!-- Adresu mozo odstranit dela chyby -->
+                <?php if ($admin): ?>
+                    <br />
+                    <a href="editoruzivatelu/<?= $uzivatel['uzivatele_id'] ?>">Editovat</a>
+                    <a href="uzivatel/<?= $uzivatel['uzivatele_id'] ?>/odstranit">Odstranit</a>
+                <?php endif ?>
+
+            </td>
+        </tr>
+    <?php endforeach ?>
+</table>
+<table>
+<?php foreach ($uzivatele as $uzivatel): ?>
+        <tr>
+            <td>
+                <h2><a href="uzivatel/<?= $uzivatel['url'] ?>"><?= $uzivatel['titulek'] ?></a></h2>
+                <?= $uzivatel['popisek'] ?>
+                <?php if ($admin): ?>
+                    <br />
+                    <a href="editor/<?= $sluzba['url'] ?>">Editovat</a>
+                    <a href="sluzba/<?= $sluzba['url'] ?>/odstranit">Odstranit</a>
+                <?php endif ?>
+
+            </td>
+        </tr>
+    <?php endforeach ?>
+    </table>
+
+   

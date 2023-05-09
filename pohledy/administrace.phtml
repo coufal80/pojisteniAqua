@@ -1,0 +1,15 @@
+<p>Vítejte v administraci, jste přihlášeni jako <?= $jmeno ?></p>
+<?php if (!$admin) : ?>
+    <p>Nemáte administrátorská oprávnění, požádejte administrátora webu, aby vám je přidělil.</p>
+<?php endif ?>
+<h2><a href="editor">Editor služeb</a></h2>
+<h2><a href="editoruzivatelu">Editor uživatelů</a></h2> 
+<h2><a href="sluzba">Seznam služeb</a></h2>
+<h2><a href="uzivatel">Seznam uživatelů</a></h2>
+<h2><a href="detailuzivatele">Detail uživatele</h2>
+<h2><a href="administrace/odhlasit">Odhlásit</a></h2>
+
+
+<footer>
+    <a href="administrace">Administrace</a>
+</footer>
